@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Guinea Pig Oracle | Library</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="page">
+    <header class="site-header">
+      <div class="brand">
+        <span class="brand-mark">GP</span>
+        <div>
+          <p class="brand-title">Guinea Pig Oracle</p>
+          <p class="brand-subtitle">Playful, quirky, and quietly wise.</p>
+        </div>
+      </div>
+      <nav class="site-nav">
+        <a href="index.html">Draw</a>
+        <a href="spread.html">Spread</a>
+        <a class="is-active" href="library.html">Library</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="library-header">
+        <div>
+          <p class="eyebrow">All 44 cards</p>
+          <h1>Browse the whole guinea pig oracle deck.</h1>
+          <p class="lead">
+            Search by title, keyword, or a reversed vibe to find the right card.
+          </p>
+        </div>
+        <div class="search-block">
+          <label class="select-label" for="search-input">Search</label>
+          <input
+            id="search-input"
+            type="search"
+            placeholder="Try: cozy, courage, hay, trust"
+          />
+          <label class="select-label" for="meaning-filter">Meaning Side</label>
+          <select id="meaning-filter">
+            <option value="all">All meanings</option>
+            <option value="upright">Upright keywords</option>
+            <option value="reversed">Reversed keywords</option>
+          </select>
+          <label class="select-label" for="keyword-filter">Keyword Tag</label>
+          <select id="keyword-filter">
+            <option value="">Any keyword</option>
+          </select>
+          <label class="filter-toggle" for="favorites-only">
+            <input id="favorites-only" type="checkbox" />
+            Favorites only
+          </label>
+          <button class="ghost filter-clear" id="clear-filters" type="button">
+            Clear Filters
+          </button>
+          <p class="helper-text" id="results-count"></p>
+        </div>
+      </section>
+
+      <section class="favorites-panel is-hidden" id="favorites-panel">
+        <div class="favorites-header">
+          <p class="eyebrow">Quick Access</p>
+          <h2>Favorite Cards</h2>
+        </div>
+        <div class="favorites-grid" id="favorites-grid"></div>
+      </section>
+
+      <section class="library-grid" id="library-grid"></section>
+    </main>
+
+    <script src="deck-data.js"></script>
+    <script src="app.js"></script>
+    <script src="ui-components.js"></script>
+    <script src="library.js"></script>
+  </body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Guinea Pig Oracle | Spread</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="page">
+    <header class="site-header">
+      <div class="brand">
+        <span class="brand-mark">GP</span>
+        <div>
+          <p class="brand-title">Guinea Pig Oracle</p>
+          <p class="brand-subtitle">Playful, quirky, and quietly wise.</p>
+        </div>
+      </div>
+      <nav class="site-nav">
+        <a href="index.html">Draw</a>
+        <a class="is-active" href="spread.html">Spread</a>
+        <a href="library.html">Library</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="spread-setup">
+        <div>
+          <p class="eyebrow">Three cards, one tale</p>
+          <h1>Pick a spread and reveal the story.</h1>
+          <p class="lead">
+            Choose a classic Past / Present / Future reading or the guinea pig
+            themed spread for a little snack-fueled clarity.
+          </p>
+        </div>
+        <div class="spread-controls">
+          <label class="select-label" for="spread-choice">Spread</label>
+          <select id="spread-choice">
+            <option value="ppf">Past / Present / Future</option>
+            <option value="snack">Snack / Nibble / Feast</option>
+            <option value="custom">Custom spread</option>
+          </select>
+          <label class="select-label" for="deal-speed">Deal speed</label>
+          <select id="deal-speed">
+            <option value="slow">Slow</option>
+            <option value="normal" selected>Normal</option>
+            <option value="fast">Fast</option>
+          </select>
+          <label class="select-label" for="deal-style">Animation style</label>
+          <select id="deal-style">
+            <option value="classic" selected>Classic</option>
+            <option value="snappy">Snappy</option>
+            <option value="dramatic">Dramatic</option>
+          </select>
+          <div class="custom-controls is-hidden" id="custom-controls">
+            <label class="select-label" for="custom-count">Number of cards</label>
+            <input
+              id="custom-count"
+              type="number"
+              min="2"
+              max="7"
+              value="3"
+              inputmode="numeric"
+            />
+            <label class="select-label" for="custom-labels">Position labels</label>
+            <textarea
+              id="custom-labels"
+              rows="3"
+              placeholder="Past, Present, Future"
+            ></textarea>
+            <p class="helper-text" id="custom-hint">
+              Use commas or new lines. Missing labels will be auto-filled.
+            </p>
+          </div>
+          <button class="primary" id="draw-spread">Draw 3 Cards</button>
+        </div>
+      </section>
+
+      <section class="spread-grid" id="spread-output"></section>
+
+      <section class="history-panel">
+        <div class="history-header">
+          <div>
+            <p class="eyebrow">Saved Readings</p>
+            <h2>Spread History</h2>
+          </div>
+          <button class="ghost history-clear" id="clear-history" type="button">
+            Clear History
+          </button>
+        </div>
+        <div class="history-list" id="history-list"></div>
+      </section>
+    </main>
+
+    <script src="deck-data.js"></script>
+    <script src="app.js"></script>
+    <script src="ui-components.js"></script>
+    <script src="spread.js"></script>
+  </body>
+</html>
